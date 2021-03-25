@@ -11,6 +11,7 @@
 ci: \
 	code \
 	test \
+	build \
 	package
 
 # --

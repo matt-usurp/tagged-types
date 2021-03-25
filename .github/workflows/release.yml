@@ -25,6 +25,7 @@ jobs:
 
       - run: npm ci --ignore-scripts
       - run: make build
+      - run: make package
 
       - uses: matt-usurp/npm-publish@v1
         with:
