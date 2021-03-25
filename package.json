@@ -1,5 +1,5 @@
 {
-  "version": "0.2.0",
+  "version": "0.2.1",
   "name": "@matt-usurp/tagged-types",
   "description": "A implementation of tagged types (discriminators) in TypeScript",
   "author": "Matthew Rose <matt.usurp@gmail.com>",
