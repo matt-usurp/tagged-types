@@ -7,7 +7,7 @@ describe('discriminator', (): void => {
       const discriminated = discriminate({ foo: 123 });
 
       expect(discriminated).toEqual({
-        discriminator: 'test-discriminator-foo',
+        type: 'test-discriminator-foo',
         value: {
           foo: 123,
         },
@@ -18,21 +18,21 @@ describe('discriminator', (): void => {
       const discriminate = factory('test-discriminator-bar');
 
       expect(discriminate({ foo: 'foo-string' })).toEqual({
-        discriminator: 'test-discriminator-bar',
+        type: 'test-discriminator-bar',
         value: {
           foo: 'foo-string',
         },
       });
 
       expect(discriminate({ bar: 'bar-string' })).toEqual({
-        discriminator: 'test-discriminator-bar',
+        type: 'test-discriminator-bar',
         value: {
           bar: 'bar-string',
         },
       });
 
       expect(discriminate({ foo: 'foo-string', bar: 'bar-string' })).toEqual({
-        discriminator: 'test-discriminator-bar',
+        type: 'test-discriminator-bar',
         value: {
           foo: 'foo-string',
           bar: 'bar-string',
@@ -46,7 +46,7 @@ describe('discriminator', (): void => {
       const discriminated = make('test-discriminator-baz', { baz: 'baz-string' });
 
       expect(discriminated).toEqual({
-        discriminator: 'test-discriminator-baz',
+        type: 'test-discriminator-baz',
         value: {
           baz: 'baz-string',
         },
@@ -58,7 +58,7 @@ describe('discriminator', (): void => {
     it('can detect discriminated value', (): void => {
       expect(
         assert('test-discriminator-alice', {
-          discriminator: 'test-discriminator-alice',
+          type: 'test-discriminator-alice',
           value: 123,
         })
       ).toEqual(true);
@@ -67,7 +67,7 @@ describe('discriminator', (): void => {
     it('can detect invalid discriminated values', (): void => {
       expect(
         assert('test-discriminator-ashton', {
-          discriminator: 'test-discriminator-alice',
+          type: 'test-discriminator-alice',
           value: 123,
         })
       ).toEqual(false);
