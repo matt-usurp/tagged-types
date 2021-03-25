@@ -127,18 +127,14 @@ package.build.compile:
 	find build/workspace -type f -name "*.proof.js" -delete
 	find build/workspace -type f -name "*.proof.d.js" -delete
 
-	find build/workspace -type f -name "*.spec.js" -delete
-	find build/workspace -type f -name "*.spec.js.map" -delete
-	find build/workspace -type f -name "*.spec.d.ts" -delete
+	find build/workspace -type f -name "*.test.js" -delete
+	find build/workspace -type f -name "*.test.js.map" -delete
+	find build/workspace -type f -name "*.test.d.ts" -delete
 
 package.build.compile.verify:
-	test ! -f build/workspace/application/handler/builder.spec.js
-	test ! -f build/workspace/application/handler/builder.proof.js
-	test ! -f build/workspace/application/handler.spec.js
+	test ! -f build/workspace/discriminator.test.js
 
-	test -f build/workspace/application/handler.js
-	test -f build/workspace/application/middleware.js
-	test -f build/workspace/provider/aws.js
+	test -f build/workspace/discriminator.js
 
 package.build.package:
 	cp package.json build/workspace/package.json
