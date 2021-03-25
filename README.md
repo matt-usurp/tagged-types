@@ -8,4 +8,4 @@ A tagged type (discriminator) implementation in TypeScript.
 
 ## Usage
 
-Write me
+Basic usage can be see in the `/examples` directory.
