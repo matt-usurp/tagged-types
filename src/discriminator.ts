@@ -3,10 +3,8 @@
  */
 export type Discriminator<Discriminator extends string, Value> = {
   /**
-   * This is a discriminator field and should not directly used.
-   * Please use the discriminator tooling provided instead.
-   *
-   * @deprecated This field should not be used, it is internal.
+   * This is a discriminator field that can be used to test the value.
+   * It is better to use the discriminator tooling provided instead.
    */
   readonly discriminator: Discriminator;
   readonly value: Value;
